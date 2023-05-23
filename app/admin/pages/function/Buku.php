@@ -12,17 +12,87 @@ if ($_GET['act'] == "tambah") {
     $j_buku_baik = $_POST['jumlahBukuBaik'];
     $j_buku_rusak = $_POST['jumlahBukuRusak'];
 
-    // PROCESS INSERT DATA TO DATABASE
-    $sql = "INSERT INTO buku(judul_buku,kategori_buku,penerbit_buku,pengarang,tahun_terbit,isbn,j_buku_baik,j_buku_rusak)
-        VALUES('" . $judul_buku . "','" . $kategori_buku . "','" . $penerbit_buku . "','" . $pengarang . "','" . $tahun_terbit . "','" . $isbn . "', '" . $j_buku_baik . "', '" . $j_buku_rusak . "')";
-    $sql .= mysqli_query($koneksi, $sql);
+    $stringreplace 		= array ('/','\\',',','.','#',':',';','\'','"','[',']','{','}',')','(','|','`','~','!','@','%','$','^','&','*','=','?','+',' ','_');
+	$code		   		= md5(uniqid(rand()));
+	$gencode			= substr($code, 0, 5);
+	$replace			= strtolower(str_replace($stringreplace,'_',$judul_buku));
+	$nama_file 			= $_FILES["image"]["name"];
+	$tipe_file 			= $_FILES["image"]["type"];
+	$alamat 			= $_FILES["image"]["tmp_name"];
+	$nama_baru 			= "buku_".$replace."_".$gencode.".".end((explode(".", $nama_file)));
+	$tujuan 			= "../../../../assets/Buku/$nama_baru";
+	$nama_file2 			= $_FILES["pdf"]["name"];
+	$tipe_file2 			= $_FILES["pdf"]["type"];
+	$alamat2			= $_FILES["pdf"]["tmp_name"];
+	$nama_baru2 			= "pdf_".$replace."_".$gencode.".".end((explode(".", $nama_file2)));
+	$tujuan2 			= "../../../../assets/ebook/$nama_baru2";
 
-    if ($sql) {
-        $_SESSION['berhasil'] = "Data buku berhasil ditambahkan !";
-        header("location: " . $_SERVER['HTTP_REFERER']);
-    } else {
-        $_SESSION['gagal'] = "Data buku gagal ditambahkan !";
-        header("location: " . $_SERVER['HTTP_REFERER']);
+    if(empty($nama_file) && empty($nama_file2)){
+
+    // PROCESS INSERT DATA TO DATABASE
+        $sql = "INSERT INTO buku(judul_buku,kategori_buku,penerbit_buku,pengarang,tahun_terbit,isbn,j_buku_baik,j_buku_rusak)
+            VALUES('" . $judul_buku . "','" . $kategori_buku . "','" . $penerbit_buku . "','" . $pengarang . "','" . $tahun_terbit . "','" . $isbn . "', '" . $j_buku_baik . "', '" . $j_buku_rusak . "')";
+        $sql .= mysqli_query($koneksi, $sql);
+
+        if ($sql) {
+            $_SESSION['berhasil'] = "Data buku berhasil ditambahkan !";
+            header("location: " . $_SERVER['HTTP_REFERER']);
+        } else {
+            $_SESSION['gagal'] = "Data buku gagal ditambahkan !";
+            header("location: " . $_SERVER['HTTP_REFERER']);
+        }
+    }elseif (!empty($nama_file) && empty($nama_file2)){
+        if ($tipe_file != "image/gif" AND $tipe_file != "image/jpg" AND $tipe_file != "image/jpeg" AND $tipe_file != "image/png") {
+			$_SESSION['gagal'] = "Data buku gagal ditambahkan Format Image Salah !";
+            header("location: " . $_SERVER['HTTP_REFERER']);
+		}else{
+            $gambar_baru = move_uploaded_file($alamat, $tujuan);
+            $sql = "INSERT INTO buku(judul_buku,kategori_buku,penerbit_buku,pengarang,tahun_terbit,isbn,j_buku_baik,j_buku_rusak,image)
+            VALUES('" . $judul_buku . "','" . $kategori_buku . "','" . $penerbit_buku . "','" . $pengarang . "','" . $tahun_terbit . "','" . $isbn . "', '" . $j_buku_baik . "', '" . $j_buku_rusak . "', '".$nama_baru."')";
+            $sql .= mysqli_query($koneksi, $sql);
+        }
+        if ($sql) {
+            $_SESSION['berhasil'] = "Data buku berhasil ditambahkan !";
+            header("location: " . $_SERVER['HTTP_REFERER']);
+        } else {
+            $_SESSION['gagal'] = "Data buku gagal ditambahkan !";
+            header("location: " . $_SERVER['HTTP_REFERER']);
+        }
+    }elseif(!empty($nama_file) && !empty($nama_file2)){
+        if ($tipe_file != "image/gif" AND $tipe_file != "image/jpg" AND $tipe_file != "image/jpeg" AND $tipe_file != "image/png") {
+			$_SESSION['gagal'] = "Data buku gagal ditambahkan Format Image Salah !";
+            header("location: " . $_SERVER['HTTP_REFERER']);
+		}else{
+            $gambar_baru = move_uploaded_file($alamat, $tujuan);
+            $gambar_baru2 = move_uploaded_file($alamat2, $tujuan2);
+            $sql = "INSERT INTO buku(judul_buku,kategori_buku,penerbit_buku,pengarang,tahun_terbit,isbn,j_buku_baik,j_buku_rusak,image,pdf)
+            VALUES('" . $judul_buku . "','" . $kategori_buku . "','" . $penerbit_buku . "','" . $pengarang . "','" . $tahun_terbit . "','" . $isbn . "', '" . $j_buku_baik . "', '" . $j_buku_rusak . "', '".$nama_baru."','".$nama_baru2."')";
+            $sql .= mysqli_query($koneksi, $sql);
+        }
+        if ($sql) {
+            $_SESSION['berhasil'] = "Data buku berhasil ditambahkan !";
+            header("location: " . $_SERVER['HTTP_REFERER']);
+        } else {
+            $_SESSION['gagal'] = "Data buku gagal ditambahkan !";
+            header("location: " . $_SERVER['HTTP_REFERER']);
+        }
+    }elseif(empty($nama_file) && !empty($nama_file2)){
+        if ($tipe_file != "image/gif" AND $tipe_file != "image/jpg" AND $tipe_file != "image/jpeg" AND $tipe_file != "image/png") {
+			$_SESSION['gagal'] = "Data buku gagal ditambahkan Format Image Salah !";
+            header("location: " . $_SERVER['HTTP_REFERER']);
+		}else{
+            $gambar_baru2 = move_uploaded_file($alamat2, $tujuan2);
+            $sql = "INSERT INTO buku(judul_buku,kategori_buku,penerbit_buku,pengarang,tahun_terbit,isbn,j_buku_baik,j_buku_rusak,pdf)
+            VALUES('" . $judul_buku . "','" . $kategori_buku . "','" . $penerbit_buku . "','" . $pengarang . "','" . $tahun_terbit . "','" . $isbn . "', '" . $j_buku_baik . "', '" . $j_buku_rusak . "', '".$nama_baru2."')";
+            $sql .= mysqli_query($koneksi, $sql);
+        }
+        if ($sql) {
+            $_SESSION['berhasil'] = "Data buku berhasil ditambahkan !";
+            header("location: " . $_SERVER['HTTP_REFERER']);
+        } else {
+            $_SESSION['gagal'] = "Data buku gagal ditambahkan !";
+            header("location: " . $_SERVER['HTTP_REFERER']);
+        }
     }
 } elseif ($_GET['act'] == "edit") {
     $id_buku = $_POST['id_buku'];

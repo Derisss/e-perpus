@@ -50,7 +50,7 @@
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-book"></i>
-                    <span>Katalog Buku</span>
+                    <span>Buku</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>

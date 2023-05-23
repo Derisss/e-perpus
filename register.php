@@ -30,7 +30,7 @@ session_start();
     <!-- iCheck -->
     <link rel="stylesheet" href="assets/plugins/iCheck/square/blue.css">
     <!-- Icon -->
-    <link rel="icon" type="icon" href="assets/dist/img/logo_app.png">
+    <link rel="icon" type="icon" href="assets/dist/img/35.jfif">
     <!-- Custom -->
     <link rel="stylesheet" href="assets/dist/css/custom.css">
     <!-- Toastr -->
@@ -44,7 +44,7 @@ session_start();
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body" style="border-radius: 10px;">
-            <img src="assets/dist/img/logo_app.png" height="80px" width="80px" style="display: block; margin-left: auto; margin-right: auto; margin-top: -12px; margin-bottom: 5px;">
+            <img src="assets/dist/img/35.jfif" height="80px" width="80px" style="display: block; margin-left: auto; margin-right: auto; margin-top: -12px; margin-bottom: 5px;">
 
             <form name="formLogin" action="function/Process.php?aksi=daftar" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
                 <div class="form-group has-feedback">
@@ -77,7 +77,7 @@ session_start();
                 </div>
             </div>
 
-            <p style="text-align: center; font-size: 13px;">Hak Cipta &copy; <?= date('Y'); ?> .<?= $row1['nama_app']; ?> by FA Team.</p>
+            <p style="text-align: center; font-size: 13px;">&copy; <?= date('Y'); ?> .<?= $row1['nama_app']; ?> by BE Team.</p>
 
         </div>
         <!-- /.login-box-body -->

@@ -1,7 +1,5 @@
 <?php
-//------------------------------::::::::::::::::::::------------------------------\\
-// Dibuat oleh FA Team di PT. Pacifica Raya Technology \\
-//------------------------------::::::::::::::::::::------------------------------\\
+
 session_start();
 if ($_SESSION['level'] != "Admin") {
     $_SESSION['masuk_dulu'] = "Silahkan masuk terlebih dahulu !!";
@@ -42,7 +40,7 @@ if ($_SESSION['level'] != "Admin") {
     <!-- -->
     <link rel="stylesheet" href="../../assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- Icon -->
-    <link rel="icon" type="icon" href="../../assets/dist/img/logo_app.png">
+    <link rel="icon" type="icon" href="../../assets/dist/img/35.png">
     <!-- Custom -->
     <link rel="stylesheet" href="../../assets/dist/css/custom.css">
     <!-- Toastr -->
@@ -52,7 +50,7 @@ if ($_SESSION['level'] != "Admin") {
         .theme-loader {
             height: 100%;
             width: 100%;
-            background-color: #fff;
+            background-color: #f39c12;
             position: fixed;
             z-index: 999999;
             top: 0;

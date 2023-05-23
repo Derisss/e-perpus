@@ -50,7 +50,7 @@
         $row1 = mysqli_fetch_assoc($sql);
         ?>
         <div class="alert alert-secondary" style="color: #383d41; background-color: #e2e3e5; border-color: #d6d8db;">
-            Selamat <?= $salam; ?>, Selamat datang <b><?= $_SESSION['fullname']; ?></b> di <?= $row1['nama_app']; ?>.
+            Selamat <?= $salam; ?>, Selamat datang <b><?= $_SESSION['fullname']; ?></b> di Perpus 35.
         </div>
         <!-- -->
         <?php
@@ -62,8 +62,8 @@
 
         <img src="../../assets/dist/img/logo_app.png" width="120px" height="120px" style="display: block; margin-left: auto; margin-right: auto; margin-top: 100px;">
 
-        <h1 class="text-center"><?= $row['nama_app']; ?></h1>
-        <p class="text-center">Alamat : <?= $row['alamat_app']; ?>| Email : <?= $row['email_app']; ?> | Nomor Telpon : <?= $row['nomor_hp']; ?> </p>
+        <h1 class="text-center">Perpus 35</h1>
+        <p class="text-center">Alamat : Jl. Dago pojok No. 12, Dago, Kec Coblong, Kota Bandung | Email : adityadaffa@mhs.itenas.ac.id | Nomor Telpon : 087888782159 </p>
     </section>
     <!-- /.content -->
 </div>

@@ -35,6 +35,7 @@
                         <h3 class="box-title" style="font-family: 'Quicksand', sans-serif; font-weight: bold;">Data Buku</h3>
                         <div class="form-group m-b-2 text-right" style="margin-top: -20px; margin-bottom: -5px;">
                             <button type="button" onclick="tambahBuku()" class="btn btn-info"><i class="fa fa-plus"></i> Tambah Buku</button>
+                            <a href="../reportbuku.php" class="btn btn-info"><i class="fa fa-download"></i> PDF</a>
                         </div>
                     </div>
                     <!-- /.box-header -->
@@ -43,12 +44,14 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>IMAGE</th>
                                     <th>Judul Buku</th>
                                     <th>Pengarang</th>
                                     <th>Penerbit</th>
                                     <th>Buku Baik</th>
                                     <th>Buku Rusak</th>
                                     <th>Jumlah Buku</th>
+                                    <th>PDF</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -62,6 +65,7 @@
                                 <tbody>
                                     <tr>
                                         <td><?= $no++; ?></td>
+                                        <td><img src="../../assets/Buku/<?= $row['image']; ?>" width="90"></td>
                                         <td><?= $row['judul_buku']; ?></td>
                                         <td><?= $row['pengarang']; ?></td>
                                         <td><?= $row['penerbit_buku']; ?></td>
@@ -73,6 +77,8 @@
 
                                             echo $j_buku_rusak + $j_buku_baik;
                                             ?></td>
+                                        <td><a href="../../assets/ebook/<?= $row['pdf']; ?>">PDF</a></td>    
+                                            
                                         <td>
                                             <a href="#" data-target="#modalEditBuku<?= $row['id_buku']; ?>" data-toggle="modal" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                                             <a href="pages/function/Buku.php?act=hapus&id=<?= $row['id_buku']; ?>" class="btn btn-danger btn-sm btn-del"><i class="fa fa-trash"></i></a>
@@ -145,6 +151,14 @@
                                                         <div class="form-group">
                                                             <label>Jumlah Buku Rusak <small style="color: red;">* Wajib diisi</small></label>
                                                             <input type="number" class="form-control" value="<?= $row['j_buku_rusak']; ?>" name="jumlahBukuRusak" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Image <small style="color: red;">* Wajib diisi</small></label>
+                                                            <input type="file" class="form-control" name="image" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>PDF <small style="color: red;">* Wajib diisi</small></label>
+                                                            <input type="file" class="form-control" name="pdf" required>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
@@ -235,10 +249,19 @@
                         <label>Jumlah Buku Baik <small style="color: red;">* Wajib diisi</small></label>
                         <input type="number" class="form-control" placeholder="Masukan Jumlah Buku Baik" name="jumlahBukuBaik" required>
                     </div>
+            
                     <div class="form-group">
                         <label>Jumlah Buku Rusak <small style="color: red;">* Wajib diisi</small></label>
                         <input type="number" class="form-control" placeholder="Masukan Jumlah Buku Rusak" name="jumlahBukuRusak" required>
                     </div>
+                    <div class="form-group">
+                        <label>Image <small style="color: red;">* Wajib diisi</small></label>
+                        <input type="file" class="form-control" name="image" required>
+                    </div>
+                    <div class="form-group">
+                        <label>PDF <small style="color: red;">* Wajib diisi</small></label>
+                        <input type="file" class="form-control" name="pdf" required>
+                    x</div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary btn-block">Simpan</button>

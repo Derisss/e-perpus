@@ -1,7 +1,7 @@
 <?php
 session_start();
 //------------------------------::::::::::::::::::::------------------------------\\
-// Dibuat oleh FA Team di PT. Pacifica Raya Technology \\
+//Dibuat oleh FA Team di PT. Pacifica Raya Technology \\
 //------------------------------::::::::::::::::::::------------------------------\\
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ session_start();
     $sql = mysqli_query($koneksi, "SELECT * FROM identitas");
     $row1 = mysqli_fetch_assoc($sql);
     ?>
-    <title>Masuk | <?= $row1['nama_app']; ?></title>
+    <title>Login | Perpus 35</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -30,7 +30,7 @@ session_start();
     <!-- iCheck -->
     <link rel="stylesheet" href="assets/plugins/iCheck/square/blue.css">
     <!-- Icon -->
-    <link rel="icon" type="icon" href="assets/dist/img/logo_app.png">
+    <link rel="icon" type="icon" href="assets/dist/img/35.jfif">
     <!-- Custom -->
     <link rel="stylesheet" href="assets/dist/css/custom.css">
     <!-- Toastr -->
@@ -40,11 +40,11 @@ session_start();
 <body class="hold-transition login-page" style="font-family: 'Quicksand', sans-serif;">
     <div class="login-box">
         <div class="login-logo">
-            <a href="masuk"><b><?= $row1['nama_app']; ?></b></a>
+            <a href="masuk"><b> Perpus 35</b></a>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body" style="border-radius: 10px;">
-            <img src="assets/dist/img/logo_app.png" height="80px" width="80px" style="display: block; margin-left: auto; margin-right: auto; margin-top: -12px; margin-bottom: 5px;">
+            <img src="assets/dist/img/35.jfif" height="80px" width="80px" style="display: block; margin-left: auto; margin-right: auto; margin-top: -12px; margin-bottom: 5px;">
             <form name="formLogin" action="function/Process.php?aksi=masuk" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" name="username" id="username" placeholder="Nama Pengguna">
@@ -72,7 +72,7 @@ session_start();
                 </div>
             </div>
 
-            <p style="text-align: center; font-size: 13px;">Hak Cipta &copy; <?= date('Y'); ?> .<?= $row1['nama_app']; ?> by FA Team.</p>
+            <p style="text-align: center; font-size: 13px;">&copy; <?= date('Y'); ?> .<?= $row1['nama_app']; ?> by BE Team.</p>
 
         </div>
         <!-- /.login-box-body -->

@@ -1,7 +1,7 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <section class="content-header"> 
         <h1 style="font-family: 'Quicksand', sans-serif; font-weight: bold;">
             Profil Saya
             <small>
@@ -77,34 +77,19 @@
                                     ?>
                                     <option disabled>------------------------------------------</option>
                                     <!-- X -->
-                                    <option value="X - Administrasi Perkantoran">X - Administrasi Perkantoran</option>
-                                    <option value="X - Farmasi">X - Farmasi</option>
-                                    <option value="X - Perbankan">X - Perbankan</option>
-                                    <option value="X - Rekayasa Perangkat Lunak">X - Rekayasa Perangkat Lunak</option>
-                                    <option value="X - Tata Boga">X - Tata Boga</option>
-                                    <option value="X - Teknik Kendaraan Ringan">X - Teknik Kendaraan Ringan</option>
-                                    <option value="X - Teknik Komputer dan Jaringan">X - Teknik Komputer dan Jaringan</option>
-                                    <option value="X - Teknik Sepeda Motor">X - Teknik Sepeda Motor</option>
+                                    <option value="VII - 1">VII - 1</option>
+                                    <option value="VII - 2">VII - 2</option>
+                                    <option value="VII - 3">VII - 3</option>
                                     <!-- XI -->
                                     <option disabled>------------------------------------------</option>
-                                    <option value="XI - Administrasi Perkantoran">XI - Administrasi Perkantoran</option>
-                                    <option value="XI - Farmasi">XI - Farmasi</option>
-                                    <option value="XI - Perbankan">XI - Perbankan</option>
-                                    <option value="XI - Rekayasa Perangkat Lunak">XI - Rekayasa Perangkat Lunak</option>
-                                    <option value="XI - Tata Boga">XI - Tata Boga</option>
-                                    <option value="XI - Teknik Kendaraan Ringan">XI - Teknik Kendaraan Ringan</option>
-                                    <option value="XI - Teknik Komputer dan Jaringan">XI - Teknik Komputer dan Jaringan</option>
-                                    <option value="XI - Teknik Sepeda Motor">XI - Teknik Sepeda Motor</option>
+                                    <option value="VIII - 1">VIII - 1</option>
+                                    <option value="VIII - 2">VIII - 2</option>
+                                    <option value="VIII - 3">VIII - 3</option>
                                     <!-- XII -->
                                     <option disabled>------------------------------------------</option>
-                                    <option value="XII - Administrasi Perkantoran">XII - Administrasi Perkantoran</option>
-                                    <option value="XII - Farmasi">XII - Farmasi</option>
-                                    <option value="XII - Perbankan">XII - Perbankan</option>
-                                    <option value="XII - Rekayasa Perangkat Lunak">XII - Rekayasa Perangkat Lunak</option>
-                                    <option value="XII - Tata Boga">XII - Tata Boga</option>
-                                    <option value="XII - Teknik Kendaraan Ringan">XII - Teknik Kendaraan Ringan</option>
-                                    <option value="XII - Teknik Komputer dan Jaringan">XII - Teknik Komputer dan Jaringan</option>
-                                    <option value="XII - Teknik Sepeda Motor">XII - Teknik Sepeda Motor</option>
+                                    <option value="IX - 1">IX - 1</option>
+                                    <option value="IX - 2">IX - 2</option>
+                                    <option value="IX - 3">IX - 3</option>
                                 </select>
                             </div>
                             <div class="form-group">

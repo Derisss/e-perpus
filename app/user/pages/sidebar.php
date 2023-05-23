@@ -18,6 +18,7 @@
             <li><a href="dashboard"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
             <li><a href="peminjaman-buku"><i class="fa fa-exchange"></i> <span>Peminjaman Buku</span></a></li>
             <li><a href="pengembalian-buku"><i class="fa fa-repeat"></i> <span>Pengembalian Buku</span></a></li>
+            <li><a href="list-buku"><i class="fa fa-book"></i> <span>List Buku</span></a></li>
             <li class="header">LAIN LAIN</li>
             <li><a href="pesan"><i class="fa fa-envelope"></i> <span>Pesan</span>
                     <span class="pull-right-container" id="jumlahPesan">
